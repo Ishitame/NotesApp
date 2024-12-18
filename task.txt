@@ -1,0 +1,3 @@
+create a quick quiz game in js
+prompt generate 2 random numbers and ask user to add them
+terminatw when  enter wrong answer4

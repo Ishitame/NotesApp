@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div>
+                        <a href="\" class="flex items-center py-4 px-2">
+                            <span class="font-semibold text-gray-500 text-lg">Notes App</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="\" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Home</a>
+                    <a href="\new" class="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300">New Note</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto mt-8 px-4">
+        <h1 class="text-3xl font-bold mb-6">Your Notes</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Sample note cards. In a real app, these would be dynamically generated -->
+             <%files.forEach(function(file){%>
+            <div class="bg-white p-3 rounded-lg shadow-md w-64">
+                <!-- <%if(file.isDirectory()){%>
+                    <i class="ri-folder-3-fill"></i>
+
+                <%}%>
+                <%if(!file.isDirectory()){%>
+                    <i class="ri-file-2-fill"></i>
+
+                <%}%> -->
+
+                <h2 class="text-xl font-semibold mb-2"><%=file.name%></h2>
+
+                
+                <p class="text-gray-600 mb-2"><%=file.date%></p>
+
+
+
+
+
+
+                <a href="/show/<%=file.name%>" class="mt-4 text-green-500 hover:text-green-600 font-bold">
+                    View 
+                    &nbsp;&nbsp;
+                </a>
+               
+                <a href="/edit/<%=file.name%>" class="mt-4 text-green-500 hover:text-green-600 font-bold">
+                    Edit 
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+                   
+                </a>
+                <a href="/delete/<%=file.name%>" class="mt-4 text-green-500 hover:text-green-600 font-bold">
+                    <i class="ri-delete-bin-6-line" style="color: red;"></i>
+                </a>
+            </div>
+            <%})%>
+        </div>
+    </div>
+</body>
+</html>
